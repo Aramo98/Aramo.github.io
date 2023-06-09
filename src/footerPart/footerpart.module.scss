@@ -1,0 +1,16 @@
+@mixin footerpart{
+    width: 100%;
+    height: 110px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    box-shadow: 2px 5px 10px #ccc;
+    padding-right: 15px;
+}
+
+footer{
+    @include footerpart()
+}
+

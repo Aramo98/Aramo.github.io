@@ -1,0 +1,249 @@
+$darkTheme: gray;
+$lightTheme: #fff;
+$color: #000;
+$textDecoration: none;
+$listStyle: none;
+
+@mixin litDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.generalBlock {
+  width: 100%;
+  height: auto;
+}
+.ToggleButton {
+  width: 50px;
+  height: 50px;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+box-shadow: 2px 5px 10px #ccc;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 3;
+  background-color: $lightTheme;
+  cursor: pointer;
+}
+.switchButton{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+   border: none;
+  z-index:1;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  border-radius: 50%;
+}
+.navBlockDark {
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  background-color: $darkTheme;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  left: -100%;
+  padding-top: 10%;
+  box-shadow: 2px 5px 10px #ccc;
+  ul {
+    @include litDisplay();
+    gap: 15px;
+    li {
+position: relative;
+      list-style: $listStyle;
+      a {
+        color: $color;
+        text-decoration: $textDecoration;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+    
+        &::before{
+           content: "";
+           position: absolute;
+           width: 0;
+           height: 5px;
+           background-color: $color;
+           bottom: 0;
+           left: 0;
+           transition: all 0.5s ease;
+        }
+        &:hover{
+            &::before{
+                width: 100%;
+            }
+        }
+    
+      }
+
+    }
+  }
+
+  .buttonGroup{
+   width: 250px;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   gap: 15px;
+   align-items: center;
+padding-left: 30px;
+    border: none;
+    outline: none;
+    
+    button{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        cursor: pointer;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+  }
+}
+.navBlockLight{
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  background-color: $lightTheme;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  left: -100%;
+  padding-top: 10%;
+  box-shadow: 2px 5px 10px #ccc;
+  ul {
+    @include litDisplay();
+    gap: 15px;
+    li {
+position: relative;
+      list-style: $listStyle;
+      a {
+        color: $color;
+        text-decoration: $textDecoration;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+    
+        &::before{
+           content: "";
+           position: absolute;
+           width: 0;
+           height: 5px;
+           background-color: $color;
+           bottom: 0;
+           left: 0;
+           transition: all 0.5s ease;
+        }
+        &:hover{
+            &::before{
+                width: 100%;
+            }
+        }
+    
+      }
+
+    }
+  }
+
+  .buttonGroup{
+   width: 250px;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   gap: 15px;
+   align-items: center;
+padding-left: 30px;
+    border: none;
+    outline: none;
+    
+    button{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        cursor: pointer;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1281px) {
+    .navBlock{
+        ul{
+        justify-content: center;
+            li{
+                a{
+                    font-size: 20px;
+                    color: #f00;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 981px) {
+    .navBlock{
+        ul{
+        justify-content: center;
+            li{
+                a{
+                    font-size: 15px;
+                    color: #f00;
+                }
+            }
+        }
+    }
+    .clock{
+      width: 300px;
+      height: 150px;
+      background-color: #f00;
+      color: #fff;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    }
+}
